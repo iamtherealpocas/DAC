@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="dac"/>
+        <attribute name="authors" value="Pedro"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-14 06:01:31 p.m."/>
+        <attribute name="created" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDU6MjQ6MzQgcC5tLjsyODgy"/>
+        <attribute name="edited" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDY6MDE6MzEgcC5tLjsxOzI5ODM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="erro" type="Integer" array="False" size=""/>
+            <output expression="&quot;Escreva o valor do erro: &quot;" newline="True"/>
+            <declare name="xmin" type="Real" array="False" size=""/>
+            <output expression="&quot;a: &quot;" newline="True"/>
+            <declare name="xmax" type="Real" array="False" size=""/>
+            <output expression="&quot;b: &quot;" newline="True"/>
+            <assign variable="numitera&#231;oes" expression="0"/>
+            <assign variable="amplitude" expression="xmax-xmin"/>
+            <assign variable="pontomedio" expression="amplitude/2+xmin"/>
+            <assign variable="fmin" expression="f(xmin)"/>
+            <assign variable="fmax" expression="f(xmax)"/>
+            <output expression="f(0)" newline="True"/>
+        </body>
+    </function>
+    <function name="f" type="Real" variable="y">
+        <parameters>
+            <parameter name="x" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="y" type="Real" array="False" size=""/>
+            <assign variable="y" expression="x^2"/>
+        </body>
+    </function>
+</flowgorithm>
