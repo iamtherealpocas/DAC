@@ -1,4 +1,4 @@
-#import mathlib
+import mathlib
 print("Há uma função f com um zero.\nDetermina um intervalo que tenha apenas um zero e seleciona o erro que desejas que apresente esse mesmo.")
 def f(x):
     return 2**x -x**2
