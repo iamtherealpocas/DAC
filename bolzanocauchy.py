@@ -12,7 +12,7 @@ plt.xlabel("x")
 plt.ylabel("f(x)")
 plt.grid(True, alpha=0.3)
 
-plt.show()
+plt.show() #TENS DE INSTALAR A PACKAGE "PyQT6" PARA O PROGRAMAR CORRER O GRÁFICO!
 
 print("Há uma função f com um zero.\nDetermina um intervalo que tenha apenas um zero e seleciona o erro que desejas que apresente esse mesmo.")
 
