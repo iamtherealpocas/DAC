@@ -1,9 +1,9 @@
-#import mathlib
-print("Há uma função f que interseta um certo valor d.\nDefina esse valor e o programa irá encontrar o intervalo mais próximo desse valor definido com a função:")
+#import mathlib #SE QUISERES TRABALHAR NISTO VAI PARA A BRANCH MATHLIB
+#IGNORA ISTO PARA JÁ print("Há uma função f que interseta um certo valor d.\nDefina esse valor e o programa irá encontrar o intervalo mais próximo desse valor definido com a função:")
 def f(x):
     return 2**x -x**2
 print("f(x) = 2**x - x**2")
-d = int(input("d: "))
+#d = int(input("d: ")) #IGNORA ISTO PARA JÁ
 erro = float(input("\nInsira o valor do erro: "))
 xmin = float(input("a: "))
 xmax = float(input("b: "))
@@ -14,7 +14,6 @@ pontomedio = amplitude / 2 + xmin
 fmin = f(xmin)
 fmax = f(xmax)
 
-#print(fmin, ";", fmax)
 
 while xmax - xmin > erro:
     if fmax >0 and fmin <0: #a
@@ -52,9 +51,9 @@ while xmax - xmin > erro:
             #print("d")
             print("[", xmin, ",", xmax, "]")
     else:
-        print("O número mais próximo do zero da função é ", pontomedio) #DA ERRADO SE NAO TIVER ZEROS
-        print("Está no intervalo ", "[", xmin, ",", xmax, "]")
+        print("Não há zeros ou tem mais do que 1 zero!")
         break
 
-print("Número de iterações: ", numiteracoes)
-print("Está no intervalo: ", "[", xmin, ";", xmax, "]")
+#if 0 != f(x): #TEM DE SE ARRANJAR MANEIRA DE PRINTAR ISTO APENAS QUANDO O INTERVALO TIVER ZERO TALVEZ COM UMA MATCHCASE?
+#    print("Número de iterações: ", numiteracoes)
+#    print("Está no intervalo: ", "[", xmin, ";", xmax, "]")
