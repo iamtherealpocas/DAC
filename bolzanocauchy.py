@@ -1,7 +1,21 @@
-import mathlib
-print("Há uma função f com um zero.\nDetermina um intervalo que tenha apenas um zero e seleciona o erro que desejas que apresente esse mesmo.")
+import numpy as np
+from matplotlib import pyplot as plt
 def f(x):
     return 2**x -x**2
+print("PARA O PROGRAMA CORRER FECHE A JANELA DO GRÁFICO!")
+plt.rcParams["figure.figsize"] = [7.50, 3.50]
+plt.rcParams["figure.autolayout"] = True
+x= np.linspace(-10, 10, 100)
+
+plt.plot(x, f(x))
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.grid(True, alpha=0.3)
+
+plt.show()
+
+print("Há uma função f com um zero.\nDetermina um intervalo que tenha apenas um zero e seleciona o erro que desejas que apresente esse mesmo.")
+
 erro = float(input("\nInsira o valor do erro: "))
 xmin = float(input("a: "))
 xmax = float(input("b: "))
