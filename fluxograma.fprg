@@ -4,25 +4,33 @@
         <attribute name="name" value="dac"/>
         <attribute name="authors" value="Pedro"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-04-14 06:01:31 p.m."/>
+        <attribute name="saved" value="2026-04-27 07:23:26 PM"/>
         <attribute name="created" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDU6MjQ6MzQgcC5tLjsyODgy"/>
         <attribute name="edited" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDY6MDE6MzEgcC5tLjsxOzI5ODM="/>
+        <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDQtMjc7MDc6MjM6MjYgUE07MTsyMzM0"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <declare name="erro" type="Integer" array="False" size=""/>
             <output expression="&quot;Escreva o valor do erro: &quot;" newline="True"/>
+            <input variable="erro"/>
             <declare name="xmin" type="Real" array="False" size=""/>
             <output expression="&quot;a: &quot;" newline="True"/>
+            <input variable="xmin"/>
             <declare name="xmax" type="Real" array="False" size=""/>
             <output expression="&quot;b: &quot;" newline="True"/>
+            <input variable="xmax"/>
+            <declare name="numitera&#231;oes" type="Integer" array="False" size=""/>
             <assign variable="numitera&#231;oes" expression="0"/>
+            <declare name="amplitude" type="Real" array="False" size=""/>
             <assign variable="amplitude" expression="xmax-xmin"/>
+            <declare name="pontomedio" type="Real" array="False" size=""/>
             <assign variable="pontomedio" expression="amplitude/2+xmin"/>
+            <declare name="fmin" type="Real" array="False" size=""/>
             <assign variable="fmin" expression="f(xmin)"/>
+            <declare name="fmax" type="Real" array="False" size=""/>
             <assign variable="fmax" expression="f(xmax)"/>
-            <output expression="f(0)" newline="True"/>
         </body>
     </function>
     <function name="f" type="Real" variable="y">
@@ -31,7 +39,7 @@
         </parameters>
         <body>
             <declare name="y" type="Real" array="False" size=""/>
-            <assign variable="y" expression="x^2"/>
+            <assign variable="y" expression="2^x-x^2"/>
         </body>
     </function>
 </flowgorithm>
