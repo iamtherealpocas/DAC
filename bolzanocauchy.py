@@ -1,9 +1,9 @@
 #import mathlib #SE QUISERES TRABALHAR NISTO VAI PARA A BRANCH MATHLIB
-#IGNORA ISTO PARA JÁ print("Há uma função f que interseta um certo valor d.\nDefina esse valor e o programa irá encontrar o intervalo mais próximo desse valor definido com a função:")
+print("Defina uma constante d e um intervalo [a,b] da função dada, em que estes se intersetem.\nO programa irá bissetar esse intervalo até obter um erro inferior entre a constante e o intervalo da função que escreveu\n")
 def f(x):
     return 2**x -x**2
 print("f(x) = 2**x - x**2")
-#d = int(input("d: ")) #IGNORA ISTO PARA JÁ
+d = int(input("d: "))
 erro = float(input("\nInsira o valor do erro: "))
 xmin = float(input("a: "))
 xmax = float(input("b: "))
@@ -16,11 +16,11 @@ fmax = f(xmax)
 
 
 while xmax - xmin > erro:
-    if fmax >0 and fmin <0: #a
+    if fmax >d and fmin <d: #a
         amplitude = xmax - xmin
         pontomedio= amplitude/2 + xmin
         print("Ponto Médio = ", pontomedio)
-        if f(pontomedio) >0:
+        if f(pontomedio) >d:
             xmax = pontomedio
             fmax = f(pontomedio)
             numiteracoes += 1
@@ -33,11 +33,11 @@ while xmax - xmin > erro:
             numiteracoes += 1
             #print("b")
             print("[", xmin, ",", xmax, "]")
-    elif fmax <0 and fmin > 0:
+    elif fmax <d and fmin > d:
         amplitude = xmax - xmin
         pontomedio = amplitude / 2 + xmin
         print("Ponto médio = ", pontomedio)
-        if f(pontomedio) <0:
+        if f(pontomedio) <d:
             xmax = pontomedio
             fmax = f(pontomedio)
             numiteracoes += 1
@@ -51,7 +51,7 @@ while xmax - xmin > erro:
             #print("d")
             print("[", xmin, ",", xmax, "]")
     else:
-        print("Não há zeros ou tem mais do que 1 zero!")
+        print("A constante d não interseta com a função OU interseta mais do que uma vez")
         break
 
 print("\n\nNúmero de iterações: ", numiteracoes)
