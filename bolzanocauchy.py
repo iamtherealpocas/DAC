@@ -41,7 +41,7 @@ while xmax - xmin > erro:
             xmax = pontomedio
             fmax = f(pontomedio)
             numiteracoes += 1
-            print("c")
+            #print("c")
             print("[", xmin, ",", xmax, "]")
 
         else:
@@ -54,6 +54,6 @@ while xmax - xmin > erro:
         print("Não há zeros ou tem mais do que 1 zero!")
         break
 
-#if 0 != f(x): #TEM DE SE ARRANJAR MANEIRA DE PRINTAR ISTO APENAS QUANDO O INTERVALO TIVER ZERO TALVEZ COM UMA MATCHCASE?
-#    print("Número de iterações: ", numiteracoes)
-#    print("Está no intervalo: ", "[", xmin, ";", xmax, "]")
+print("\n\nNúmero de iterações: ", numiteracoes)
+if numiteracoes != 0:
+    print("Está no intervalo: ", "[", xmin, ";", xmax, "]")
