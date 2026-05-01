@@ -4,10 +4,10 @@
         <attribute name="name" value="dac"/>
         <attribute name="authors" value="Pedro"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-05-01 12:53:52 PM"/>
+        <attribute name="saved" value="2026-05-01 01:05:18 PM"/>
         <attribute name="created" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDU6MjQ6MzQgcC5tLjsyODgy"/>
         <attribute name="edited" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDY6MDE6MzEgcC5tLjsxOzI5ODM="/>
-        <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDUtMDE7MTI6NTM6NTIgUE07MzsyMzI3"/>
+        <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDUtMDE7MDE6MDU6MTggUE07NDsyMzI1"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -25,8 +25,8 @@
             <declare name="xmax" type="Real" array="False" size=""/>
             <output expression="&quot;b: &quot;" newline="True"/>
             <input variable="xmax"/>
-            <declare name="numitera&#231;oes" type="Integer" array="False" size=""/>
-            <assign variable="numitera&#231;oes" expression="0"/>
+            <declare name="numiteracoes" type="Integer" array="False" size=""/>
+            <assign variable="numiteracoes" expression="0"/>
             <declare name="amplitude" type="Real" array="False" size=""/>
             <assign variable="amplitude" expression="xmax-xmin"/>
             <declare name="pontomedio" type="Real" array="False" size=""/>
@@ -39,7 +39,7 @@
                 <if expression="fmax&gt;d and fmin&lt;d">
                     <then>
                         <assign variable="amplitude" expression="xmax-xmin"/>
-                        <assign variable="pontomedio" expression="ampltitude/2+xmin"/>
+                        <assign variable="pontomedio" expression="amplitude/2+xmin"/>
                         <output expression="&quot;Ponto m&#233;dio: &quot; &amp; pontomedio" newline="True"/>
                         <if expression="f(pontomedio)&gt;d">
                             <then>
