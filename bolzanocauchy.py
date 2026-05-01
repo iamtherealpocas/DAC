@@ -1,4 +1,4 @@
-#import mathlib #SE QUISERES TRABALHAR NISTO VAI PARA A BRANCH MATHLIB
+
 print("Defina uma constante d e um intervalo [a,b] da função dada, em que estes se intersetem.\nO programa irá bissetar esse intervalo até obter um erro inferior entre a constante e o intervalo da função que escreveu\n")
 def f(x):
     return 2**x -x**2
