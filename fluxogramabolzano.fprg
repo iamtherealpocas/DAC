@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="dac"/>
+        <attribute name="authors" value="Pedro"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-05-01 12:53:52 PM"/>
+        <attribute name="created" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDU6MjQ6MzQgcC5tLjsyODgy"/>
+        <attribute name="edited" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDY6MDE6MzEgcC5tLjsxOzI5ODM="/>
+        <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDUtMDE7MTI6NTM6NTIgUE07MzsyMzI3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;f(x) = 2**x-x^2&quot;" newline="True"/>
+            <declare name="erro" type="Integer" array="False" size=""/>
+            <output expression="&quot;Escreva o valor do erro: &quot;" newline="True"/>
+            <input variable="erro"/>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <output expression="&quot;d:&quot;" newline="True"/>
+            <input variable="d"/>
+            <declare name="xmin" type="Real" array="False" size=""/>
+            <output expression="&quot;a: &quot;" newline="True"/>
+            <input variable="xmin"/>
+            <declare name="xmax" type="Real" array="False" size=""/>
+            <output expression="&quot;b: &quot;" newline="True"/>
+            <input variable="xmax"/>
+            <declare name="numitera&#231;oes" type="Integer" array="False" size=""/>
+            <assign variable="numitera&#231;oes" expression="0"/>
+            <declare name="amplitude" type="Real" array="False" size=""/>
+            <assign variable="amplitude" expression="xmax-xmin"/>
+            <declare name="pontomedio" type="Real" array="False" size=""/>
+            <assign variable="pontomedio" expression="amplitude/2+xmin"/>
+            <declare name="fmin" type="Real" array="False" size=""/>
+            <assign variable="fmin" expression="f(xmin)"/>
+            <declare name="fmax" type="Real" array="False" size=""/>
+            <assign variable="fmax" expression="f(xmax)"/>
+            <while expression="xmax-xmin&gt;erro">
+                <if expression="fmax&gt;d and fmin&lt;d">
+                    <then>
+                        <assign variable="amplitude" expression="xmax-xmin"/>
+                        <assign variable="pontomedio" expression="ampltitude/2+xmin"/>
+                        <output expression="&quot;Ponto m&#233;dio: &quot; &amp; pontomedio" newline="True"/>
+                        <if expression="f(pontomedio)&gt;d">
+                            <then>
+                                <assign variable="xmax" expression="pontomedio"/>
+                                <assign variable="fmax" expression="f(pontomedio)"/>
+                                <assign variable="numiteracoes" expression="numiteracoes+1"/>
+                                <output expression="&quot;[&quot; &amp; xmin &amp; &quot;;&quot; &amp; xmax &amp; &quot;]&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <assign variable="xmin" expression="pontomedio"/>
+                                <assign variable="fmin" expression="f(pontomedio)"/>
+                                <assign variable="numiteracoes" expression="numiteracoes+1"/>
+                                <output expression="&quot;[&quot; &amp; xmin &amp; &quot;;&quot; &amp; xmax &amp; &quot;]&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="fmax&lt;d and fmin&gt;d">
+                            <then>
+                                <assign variable="amplitude" expression="xmax-xmin"/>
+                                <assign variable="pontomedio" expression="amplitude/2+xmin"/>
+                                <output expression="&quot;Ponto m&#233;dio: &quot; &amp; pontomedio" newline="True"/>
+                                <if expression="pontomedio&lt;d">
+                                    <then>
+                                        <assign variable="xmax" expression="pontomedio"/>
+                                        <assign variable="fmax" expression="f(pontomedio)"/>
+                                        <assign variable="numiteracoes" expression="numiteracoes+1"/>
+                                        <output expression="&quot;[&quot; &amp; xmin &amp; &quot;;&quot; &amp; xmax &amp; &quot;]&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="xmin" expression="pontomedio"/>
+                                        <assign variable="fmin" expression="f(pontomedio)"/>
+                                        <assign variable="numiteracoes" expression="numiteracoes+1"/>
+                                        <output expression="&quot;[&quot; &amp; xmin &amp; &quot;;&quot; &amp; xmax &amp; &quot;]&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <output expression="&quot;A constante d n&#227;o interseta com a fun&#231;&#227;o OU interseta mais do que uma vez&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;N&#250;mero de itera&#231;&#245;es: &quot; &amp; numiteracoes" newline="True"/>
+            <if expression="numiteracoes!= 0">
+                <then>
+                    <output expression="&quot;Est&#225; no intervalo: [&quot; &amp; xmin &amp; &quot;;&quot; &amp; xmax &amp; &quot;]&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+    <function name="f" type="Real" variable="y">
+        <parameters>
+            <parameter name="x" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="y" type="Real" array="False" size=""/>
+            <assign variable="y" expression="2^x-x^2"/>
+        </body>
+    </function>
+</flowgorithm>
