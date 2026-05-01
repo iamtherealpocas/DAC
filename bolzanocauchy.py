@@ -13,9 +13,9 @@ plt.ylabel("f(x)")
 plt.grid(True, alpha=0.3)
 
 plt.show() #SE DER ERRO TENS DE INSTALAR A PACKAGE "PyQT6" PARA O PROGRAMA CORRER O GRÁFICO!
-
-print("Há uma função f com um zero.\nDetermina um intervalo que tenha apenas um zero e seleciona o erro que desejas que apresente esse mesmo.")
-
+print("Defina uma constante d e um intervalo [a,b] da função dada, em que estes se intersetem.\nO programa irá bissetar esse intervalo até obter um erro inferior entre a constante e o intervalo da função que escreveu\n")
+print("f(x) = 2**x - x**2")
+d = int(input("d: "))
 erro = float(input("\nInsira o valor do erro: "))
 xmin = float(input("a: "))
 xmax = float(input("b: "))
@@ -26,47 +26,46 @@ pontomedio = amplitude / 2 + xmin
 fmin = f(xmin)
 fmax = f(xmax)
 
-#print(fmin, ";", fmax)
 
 while xmax - xmin > erro:
-    if fmax >0 and fmin <0: #a
+    if fmax >d and fmin <d: #a
         amplitude = xmax - xmin
         pontomedio= amplitude/2 + xmin
         print("Ponto Médio = ", pontomedio)
-        if f(pontomedio) >0:
+        if f(pontomedio) >d:
             xmax = pontomedio
             fmax = f(pontomedio)
             numiteracoes += 1
-            print("a")
+            #print("a")
             print("[", xmin, ",", xmax, "]")
 
         else: #b
             xmin = pontomedio
             fmin = f(pontomedio)
             numiteracoes += 1
-            print("b")
+            #print("b")
             print("[", xmin, ",", xmax, "]")
-    elif fmax <0 and fmin > 0:
+    elif fmax <d and fmin > d:
         amplitude = xmax - xmin
         pontomedio = amplitude / 2 + xmin
         print("Ponto médio = ", pontomedio)
-        if f(pontomedio) <0:
+        if f(pontomedio) <d:
             xmax = pontomedio
             fmax = f(pontomedio)
             numiteracoes += 1
-            print("c")
+            #print("c")
             print("[", xmin, ",", xmax, "]")
 
         else:
             xmin = pontomedio
             fmin = f(pontomedio)
             numiteracoes += 1
-            print("d")
+            #print("d")
             print("[", xmin, ",", xmax, "]")
     else:
-        print("O número mais próximo do zero da função é ", pontomedio) #DA ERRADO SE NAO TIVER ZEROS
-        print("Está no intervalo ", "[", xmin, ",", xmax, "]")
+        print("A constante d não interseta com a função OU interseta mais do que uma vez")
         break
 
-print("Número de iterações: ", numiteracoes)
-print("Está no intervalo: ", xmin, ";", xmax)
+print("\n\nNúmero de iterações: ", numiteracoes)
+if numiteracoes != 0:
+    print("Está no intervalo: ", "[", xmin, ";", xmax, "]")
