@@ -3,16 +3,21 @@ from matplotlib import pyplot as plt
 def f(x):
     return 2**x -x**2
 print("PARA O PROGRAMA CORRER FECHE A JANELA DO GRÁFICO!")
-plt.rcParams["figure.figsize"] = [7.50, 3.50]
-plt.rcParams["figure.autolayout"] = True
-x= np.linspace(-10, 10, 100)
+xaxis=0
+yaxis=0
+plt.rcParams["figure.figsize"] = [7.50, 3.50] #???
+plt.rcParams["figure.autolayout"] = True #FORMATAÇÃO DA JANELA
+x= np.linspace(-5, 5.5, 100) #NÃO TENHO A CERTEZA DO QUE ISTO FAZ? NÃO MEXER NO NÚMERO 100!!!
 
 plt.plot(x, f(x))
 plt.xlabel("x")
-plt.ylabel("f(x)")
+plt.ylabel("y")
 plt.grid(True, alpha=0.3)
+plt.grid(axis="x", alpha=0.3) #NÃO ESTOU A CONSEGUIR METER OS EIXOS MESMO ESCREVENDO ISTO
+plt.grid(axis="y", alpha=0.3) #ISTO DEVE SER A SOLUÇÃO ----> https://pythonexamples.org/matplotlib-grid-axis-x/
 
 plt.show() #SE DER ERRO TENS DE INSTALAR A PACKAGE "PyQT6" PARA O PROGRAMA CORRER O GRÁFICO!
+
 print("Defina uma constante d e um intervalo [a,b] da função dada, em que estes se intersetem.\nO programa irá bissetar esse intervalo até obter um erro inferior entre a constante e o intervalo da função que escreveu\n")
 print("f(x) = 2**x - x**2")
 d = int(input("d: "))
