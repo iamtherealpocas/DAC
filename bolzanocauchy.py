@@ -16,7 +16,7 @@ fmax = f(xmax)
 
 
 while xmax - xmin > erro:
-    if fmax >d and fmin <d: #a
+    if fmax >d and fmin <d:
         amplitude = xmax - xmin
         pontomedio= amplitude/2 + xmin
         print("Ponto Médio = ", pontomedio)
@@ -24,14 +24,12 @@ while xmax - xmin > erro:
             xmax = pontomedio
             fmax = f(pontomedio)
             numiteracoes += 1
-            #print("a")
             print("[", xmin, ",", xmax, "]")
 
-        else: #b
+        else:
             xmin = pontomedio
             fmin = f(pontomedio)
             numiteracoes += 1
-            #print("b")
             print("[", xmin, ",", xmax, "]")
     elif fmax <d and fmin > d:
         amplitude = xmax - xmin
@@ -41,19 +39,17 @@ while xmax - xmin > erro:
             xmax = pontomedio
             fmax = f(pontomedio)
             numiteracoes += 1
-            #print("c")
             print("[", xmin, ",", xmax, "]")
 
         else:
             xmin = pontomedio
             fmin = f(pontomedio)
             numiteracoes += 1
-            #print("d")
             print("[", xmin, ",", xmax, "]")
     else:
         print("A constante d não interseta com a função OU interseta mais do que uma vez")
         break
 
-print("\n\nNúmero de iterações: ", numiteracoes)
+print("\nNúmero de iterações: ", numiteracoes)
 if numiteracoes != 0:
     print("Está no intervalo: ", "[", xmin, ";", xmax, "]")

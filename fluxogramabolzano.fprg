@@ -4,16 +4,16 @@
         <attribute name="name" value="dac"/>
         <attribute name="authors" value="Pedro"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-05-01 01:05:18 PM"/>
+        <attribute name="saved" value="2026-05-03 11:15:57 a.m."/>
         <attribute name="created" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDU6MjQ6MzQgcC5tLjsyODgy"/>
-        <attribute name="edited" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDY6MDE6MzEgcC5tLjsxOzI5ODM="/>
         <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDUtMDE7MDE6MDU6MTggUE07NDsyMzI1"/>
+        <attribute name="edited" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDUtMDM7MTE6MTU6NTcgYS5tLjsyOzI5Nzc="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <output expression="&quot;f(x) = 2**x-x^2&quot;" newline="True"/>
-            <declare name="erro" type="Integer" array="False" size=""/>
+            <declare name="erro" type="Real" array="False" size=""/>
             <output expression="&quot;Escreva o valor do erro: &quot;" newline="True"/>
             <input variable="erro"/>
             <declare name="d" type="Integer" array="False" size=""/>
@@ -30,16 +30,18 @@
             <declare name="amplitude" type="Real" array="False" size=""/>
             <assign variable="amplitude" expression="xmax-xmin"/>
             <declare name="pontomedio" type="Real" array="False" size=""/>
-            <assign variable="pontomedio" expression="amplitude/2+xmin"/>
+            <assign variable="pontomedio" expression="(amplitude/2) +xmin"/>
             <declare name="fmin" type="Real" array="False" size=""/>
             <assign variable="fmin" expression="f(xmin)"/>
             <declare name="fmax" type="Real" array="False" size=""/>
             <assign variable="fmax" expression="f(xmax)"/>
-            <while expression="xmax-xmin&gt;erro">
+            <declare name="break" type="Boolean" array="False" size=""/>
+            <assign variable="break" expression="false"/>
+            <while expression="xmax-xmin&gt;erro and !break">
                 <if expression="fmax&gt;d and fmin&lt;d">
                     <then>
                         <assign variable="amplitude" expression="xmax-xmin"/>
-                        <assign variable="pontomedio" expression="amplitude/2+xmin"/>
+                        <assign variable="pontomedio" expression="(amplitude/2) +xmin"/>
                         <output expression="&quot;Ponto m&#233;dio: &quot; &amp; pontomedio" newline="True"/>
                         <if expression="f(pontomedio)&gt;d">
                             <then>
@@ -60,9 +62,9 @@
                         <if expression="fmax&lt;d and fmin&gt;d">
                             <then>
                                 <assign variable="amplitude" expression="xmax-xmin"/>
-                                <assign variable="pontomedio" expression="amplitude/2+xmin"/>
+                                <assign variable="pontomedio" expression="(amplitude/2) + xmin"/>
                                 <output expression="&quot;Ponto m&#233;dio: &quot; &amp; pontomedio" newline="True"/>
-                                <if expression="pontomedio&lt;d">
+                                <if expression="f(pontomedio)&lt;d">
                                     <then>
                                         <assign variable="xmax" expression="pontomedio"/>
                                         <assign variable="fmax" expression="f(pontomedio)"/>
@@ -79,6 +81,7 @@
                             </then>
                             <else>
                                 <output expression="&quot;A constante d n&#227;o interseta com a fun&#231;&#227;o OU interseta mais do que uma vez&quot;" newline="True"/>
+                                <assign variable="break" expression="true"/>
                             </else>
                         </if>
                     </else>
