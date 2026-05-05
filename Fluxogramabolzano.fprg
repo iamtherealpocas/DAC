@@ -4,10 +4,10 @@
         <attribute name="name" value="novofluxo"/>
         <attribute name="authors" value="Pedro"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-05-05 09:14:20 PM"/>
+        <attribute name="saved" value="2026-05-05 09:48:21 PM"/>
         <attribute name="created" value="UGVkcm87REVTS1RPUC1NNE9CQ0hUOzIwMjYtMDUtMDU7MDU6NDU6MjIgUE07Mjg2OA=="/>
         <attribute name="edited" value="UGVkcm87REVTS1RPUC1NNE9CQ0hUOzIwMjYtMDUtMDU7MDY6MDY6NTcgUE07MTsyOTgy"/>
-        <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDUtMDU7MDk6MTQ6MjAgUE07MjsyMzI4"/>
+        <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDUtMDU7MDk6NDg6MjEgUE07MzsyMzM3"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -23,7 +23,7 @@
             <input variable="b"/>
             <output expression="&quot;erro: &quot;" newline="True"/>
             <input variable="erro"/>
-            <while expression="f(a)&lt;= d &amp;&amp; f(b)&gt;=d &amp;&amp; b-a&gt;erro">
+            <while expression="f(a)&lt;= d &amp;&amp; f(b)&gt;=d &amp;&amp; b-a&gt;=erro">
                 <assign variable="amplitude" expression="b-a"/>
                 <assign variable="pontomedio" expression="amplitude/2 +a"/>
                 <if expression="f(pontomedio)&gt;d">
