@@ -4,16 +4,17 @@
         <attribute name="name" value="novofluxo"/>
         <attribute name="authors" value="Pedro"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-05-05 07:51:06 PM"/>
+        <attribute name="saved" value="2026-05-05 09:14:20 PM"/>
         <attribute name="created" value="UGVkcm87REVTS1RPUC1NNE9CQ0hUOzIwMjYtMDUtMDU7MDU6NDU6MjIgUE07Mjg2OA=="/>
         <attribute name="edited" value="UGVkcm87REVTS1RPUC1NNE9CQ0hUOzIwMjYtMDUtMDU7MDY6MDY6NTcgUE07MTsyOTgy"/>
-        <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDUtMDU7MDc6NTE6MDYgUE07MTsyMzMw"/>
+        <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDUtMDU7MDk6MTQ6MjAgUE07MjsyMzI4"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <declare name="erro, a, b, fmin, fmax, amplitude, pontomedio" type="Real" array="False" size=""/>
             <declare name="d, numiteracoes" type="Integer" array="False" size=""/>
+            <assign variable="numiteracoes" expression="0"/>
             <output expression="&quot;d: &quot;" newline="True"/>
             <input variable="d"/>
             <output expression="&quot;a: &quot;" newline="True"/>
@@ -22,7 +23,7 @@
             <input variable="b"/>
             <output expression="&quot;erro: &quot;" newline="True"/>
             <input variable="erro"/>
-            <while expression="f(a)&lt;= d &lt;= f(b) &amp; b-a&gt;erro">
+            <while expression="f(a)&lt;= d &amp;&amp; f(b)&gt;=d &amp;&amp; b-a&gt;erro">
                 <assign variable="amplitude" expression="b-a"/>
                 <assign variable="pontomedio" expression="amplitude/2 +a"/>
                 <if expression="f(pontomedio)&gt;d">
@@ -43,7 +44,8 @@
                     <output expression="&quot;A constante d n&#227;o interseta com a fun&#231;&#227;o OU interseta mais do que uma vez.&quot;" newline="True"/>
                 </then>
                 <else>
-                    <output expression="numiteracoes &amp; &quot;Est&#225; no intervalo [&quot; &amp; a &amp; &quot;;&quot; &amp; b &amp; &quot;]&quot;" newline="True"/>
+                    <output expression="&quot;N&#186; de itera&#231;&#245;es: &quot; &amp; numiteracoes" newline="True"/>
+                    <output expression="&quot;Est&#225; no intervalo: [&quot; &amp; a &amp; &quot;;&quot; &amp; b &amp; &quot;]&quot;" newline="True"/>
                 </else>
             </if>
         </body>
