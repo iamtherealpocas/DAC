@@ -4,38 +4,31 @@
         <attribute name="name" value="dac"/>
         <attribute name="authors" value="Pedro"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-05-03 11:15:57 a.m."/>
+        <attribute name="saved" value="2026-05-05 02:12:36 PM"/>
         <attribute name="created" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDQtMTQ7MDU6MjQ6MzQgcC5tLjsyODgy"/>
-        <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDUtMDE7MDE6MDU6MTggUE07NDsyMzI1"/>
         <attribute name="edited" value="UGVkcm87QVNVU1ZJVk9CT09LOzIwMjYtMDUtMDM7MTE6MTU6NTcgYS5tLjsyOzI5Nzc="/>
+        <attribute name="edited" value="UGVkcm87RkVET1JBOzIwMjYtMDUtMDU7MDI6MTI6MzYgUE07NTsyMzI5"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <output expression="&quot;f(x) = 2**x-x^2&quot;" newline="True"/>
-            <declare name="erro" type="Real" array="False" size=""/>
+            <declare name="d, numiteracoes" type="Integer" array="False" size=""/>
+            <declare name="erro, xmin, xmax, fmin, fmax, amplitude, pontomedio" type="Real" array="False" size=""/>
+            <declare name="break" type="Boolean" array="False" size=""/>
             <output expression="&quot;Escreva o valor do erro: &quot;" newline="True"/>
             <input variable="erro"/>
-            <declare name="d" type="Integer" array="False" size=""/>
             <output expression="&quot;d:&quot;" newline="True"/>
             <input variable="d"/>
-            <declare name="xmin" type="Real" array="False" size=""/>
             <output expression="&quot;a: &quot;" newline="True"/>
             <input variable="xmin"/>
-            <declare name="xmax" type="Real" array="False" size=""/>
             <output expression="&quot;b: &quot;" newline="True"/>
             <input variable="xmax"/>
-            <declare name="numiteracoes" type="Integer" array="False" size=""/>
             <assign variable="numiteracoes" expression="0"/>
-            <declare name="amplitude" type="Real" array="False" size=""/>
             <assign variable="amplitude" expression="xmax-xmin"/>
-            <declare name="pontomedio" type="Real" array="False" size=""/>
             <assign variable="pontomedio" expression="(amplitude/2) +xmin"/>
-            <declare name="fmin" type="Real" array="False" size=""/>
             <assign variable="fmin" expression="f(xmin)"/>
-            <declare name="fmax" type="Real" array="False" size=""/>
             <assign variable="fmax" expression="f(xmax)"/>
-            <declare name="break" type="Boolean" array="False" size=""/>
             <assign variable="break" expression="false"/>
             <while expression="xmax-xmin&gt;erro and !break">
                 <if expression="fmax&gt;d and fmin&lt;d">

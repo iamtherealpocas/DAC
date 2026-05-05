@@ -25,10 +25,10 @@ plt.axvline(0, color='black', linewidth=.5)
 
 plt.show() #SE DER ERRO TENS DE INSTALAR A PACKAGE "PyQT6" PARA O PROGRAMA CORRER O GRÁFICO!
 
-print("Defina uma constante d e um intervalo [a,b] da função dada, em que estes se intersetem.\nO programa irá bissetar esse intervalo até obter um erro inferior entre a constante e o intervalo da função que escreveu\n")
+print("Defina uma constante d e um intervalo [a,b] da função dada, em que estes se intersetem.\nO programa irá bissetar esse intervalo até obter um erro inferior entre a constante e o intervalo da função que escreveu.\n")
 print("f(x) = 2**x - x**2")
 d = int(input("d: "))
-erro = float(input("\nInsira o valor do erro: "))
+erro = float(input("Insira o valor do erro: "))
 xmin = float(input("a: "))
 xmax = float(input("b: "))
 numiteracoes = 0
