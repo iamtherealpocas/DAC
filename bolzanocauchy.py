@@ -40,7 +40,7 @@ fmax = f(xmax)
 while f(xmin)<=d and f(xmax)>=d and xmax - xmin >= erro:
     amplitude = xmax - xmin
     pontomedio= amplitude/2 + xmin
-    print("Ponto Médio= ", pontomedio)
+    print("\nPonto Médio= ", pontomedio)
     print("Amplitude= ", amplitude)
     print("[", xmin, ",", xmax, "]")
 
