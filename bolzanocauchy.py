@@ -42,17 +42,18 @@ fmax = f(xmax)
 while f(xmin)<=d and f(xmax)>=d and xmax - xmin >= erro:
     amplitude = xmax - xmin
     pontomedio= amplitude/2 + xmin
-    print("Ponto Médio = ", pontomedio)
+    print("Ponto Médio= ", pontomedio)
+    print("Amplitude= ", amplitude)
+    print("[", xmin, ",", xmax, "]")
+
     if f(pontomedio) >d:
             xmax = pontomedio
             fmax = f(pontomedio)
             numiteracoes += 1
-            print("[", xmin, ",", xmax, "]")
     else:
         xmin = pontomedio
         fmin = f(pontomedio)
         numiteracoes += 1
-        print("[", xmin, ",", xmax, "]")
 
 print("\n\nNúmero de iterações: ", numiteracoes)
 if numiteracoes ==0:
