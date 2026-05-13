@@ -37,8 +37,6 @@ pontomedio = amplitude / 2 + xmin
 
 fmin = f(xmin)
 fmax = f(xmax)
-
-
 while f(xmin)<=d and f(xmax)>=d and xmax - xmin >= erro:
     amplitude = xmax - xmin
     pontomedio= amplitude/2 + xmin
